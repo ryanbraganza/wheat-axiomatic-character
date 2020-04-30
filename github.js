@@ -15,7 +15,7 @@ const fetchReadme = function (specifier) {
         console.error(response);
         throw new Error(`failed to fetch ${response.status}`);
       }
-      response.json();
+      return response.json();
     })
     .then((data) => {
       const { content = false } = data;
